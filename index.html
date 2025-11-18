@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURORA GLOW • Bijuterii Magice</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+
+    <header class="header">
+        <div class="logo">AURORA GLOW</div>
+        <nav class="nav">
+            <a href="#" onclick="goTo('home')">Acasă</a>
+            <a href="#" onclick="goTo('shop')">Catalog</a>
+            <a href="#" onclick="goTo('favorites')">Favorite (<span id="fav-count">0</span>)</a>
+            <a href="#" onclick="goTo('cart')">Coș (<span id="cart-count">0</span>)</a>
+            <div class="right-icons">
+                <a href="#" onclick="toggleTheme()" id="theme-btn">Luna</a>
+                <a href="#" id="auth-link" onclick="toggleAuthModal()">Log In</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="section active">
+        <div class="hero-content">
+            <h1>Bijuteriile tale magice</h1>
+            <p>Glow in the dark • Cristale • Argint 925 • Charm-uri personalizate</p>
+            <button class="glow-btn" onclick="goTo('shop')">Descoperă colecția</button>
+        </div>
+        <div class="particles"></div>
+    </section>
+
+    <section id="shop" class="section">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Caută bijuterii..." onkeyup="renderProducts()">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="filters">
+            <select id="sort-price" onchange="renderProducts()">
+                <option value="default">Sortează</option>
+                <option value="low">Preț mic → mare</option>
+                <option value="high">Preț mare → mic</option>
+            </select>
+            <select id="filter-category" onchange="renderProducts()">
+                <option value="all">Toate</option>
+                <option value="colier">Coliere</option>
+                <option value="cercei">Cercei</option>
+                <option value="bratara">Brățări</option>
+                <option value="inel">Inele</option>
+            </select>
+        </div>
+        <div class="products-grid" id="products-grid"></div>
+    </section>
+
+    <section id="favorites" class="section">
+        <h2 class="title-glow">Favoritele tale</h2>
+        <div class="search-bar">
+            <input type="text" id="search-fav" placeholder="Caută în favorite..." onkeyup="renderFavorites()">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="products-grid" id="favorites-grid"></div>
+    </section>
+
+    <section id="cart" class="section">
+        <h2 class="title-glow">Coșul tău</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">Total: <strong><span id="total-price">0</span> RON</strong></div>
+        <button class="glow-btn checkout" onclick="checkout()">Finalizează comanda</button>
+    </section>
+
+    <footer class="footer">
+        <div class="about-footer">
+            <h3>Despre Aurora Glow</h3>
+            <p>Bun venit în universul meu magic! Sunt Andreea, am 22 de ani și creez bijuterii care strălucesc în întuneric de când aveam 16 ani. Fiecare piesă e făcută cu drag, cu cristale naturale și argint 925. Vreau ca tu să te simți specială în fiecare zi – chiar și noaptea, când bijuteriile mele glow!</p>
+            <p>Cu drag, Andreea</p>
+        </div>
+        <p>&copy; 2025 AURORA GLOW</p>
+    </footer>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleAuthModal()">×</span>
+            <h2 id="modal-title">Log In</h2>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Parolă">
+            <button class="glow-btn" onclick="login()" id="auth-btn">Intră în cont</button>
+            <p>Nu ai cont? <a href="#" onclick="switchToRegister()">Înregistrează-te</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

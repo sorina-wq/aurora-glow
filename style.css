@@ -1,0 +1,36 @@
+.footer {
+    background: rgba(20,15,40,0.95);
+    color: #e0c3fc;
+    padding: 50px 5% 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+.about-footer { max-width: 800px; margin: 0 auto 30px; line-height: 1.8; font-size: 1.1rem; }
+.about-footer h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; color: #ff9aed; }
+
+.search-bar {
+    max-width: 600px;
+    margin: 20px auto;
+    position: relative;
+}
+.search-bar input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: 2px solid #ff9aed;
+    background: rgba(40,30,70,0.6);
+    color: white;
+    border-radius: 50px;
+    font-size: 1.1rem;
+}
+.search-bar i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff9aed;
+    font-size: 1.3rem;
+}
+
+#theme-btn { font-size: 1.6rem; cursor: pointer; }
+#theme-btn { font-size: 1.6rem; cursor: pointer; }
+.search-bar input#search-fav { margin-top: 20px; }
