@@ -1,2 +1,2 @@
 # aurora-glow
-Bijuterii magice care glow in the dark
+Bijuterii speciale. Glow In The Dark
